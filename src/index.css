@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. 优先级最高：锁定所有根容器的背景 */
+:root {
+  --bg-home: #F1F5F9;
+}
+
+/* 将背景色直接应用在 html 和 body 上，
+   这样即使 React 暂时卸载了所有组件，
+   浏览器底层露出的也是这个颜色 */
+html {
+  background-color: var(--bg-home) !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-home) !important;
+  /* 解决某些移动端/浏览器滚动条占据宽度导致的闪烁 */
+  overflow-x: hidden; 
+  height: 100%;
+  width: 100%;
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 2. 核心：锁定 #root 和其内部的首层容器 */
+#root {
+  background-color: var(--bg-home) !important;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. 额外预防方案：防止 Framer Motion 动画期间的透明度泄露 */
+.framer-motion-layout-wrapper {
+  background-color: var(--bg-home);
+}
+
+/* 强制让 Canvas 或其他可能产生背景的元素透明 */
+canvas {
+  display: block;
+}
