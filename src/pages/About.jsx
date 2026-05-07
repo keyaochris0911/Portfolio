@@ -182,7 +182,7 @@ export default function SpacedGarden() {
     const config = [
         { id: 0, label: "整合营销策划", flowerId: 1, themeColor: "#FFB7C5", customMargin: '12px' },
         { id: 1, label: "社媒内容运营", flowerId: 2, themeColor: "#F48FB1", customMargin: '46px' },
-        { id: 2, label: "AI数据驱动", flowerId: 3, themeColor: "#90CAF9", customMargin: '23px' },
+        { id: 2, label: "数据驱动", flowerId: 3, themeColor: "#90CAF9", customMargin: '23px' },
         { id: 3, label: "消费者洞察", flowerId: 4, themeColor: "#FFCC80", customMargin: '69px' },
         { id: 4, label: "品牌叙事", flowerId: 5, themeColor: "#EF5350", customMargin: '18px' },
         { id: 5, label: "公关传播", flowerId: 6, themeColor: "#F06292", customMargin: '46px' },

@@ -2,14 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 1. 优先级最高：锁定所有根容器的背景 */
+/* --- 1. 字体系统扩容 --- */
+/* 保留你原本需要的字体，并加入 Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,900;1,900&family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&display=swap');
+
+/* --- 2. 全局变量与背景锁定 --- */
 :root {
   --bg-home: #F1F5F9;
+  --color-text-main: #2C3E50;    
+  --color-text-muted: #8A9BB0;
 }
 
-/* 将背景色直接应用在 html 和 body 上，
-   这样即使 React 暂时卸载了所有组件，
-   浏览器底层露出的也是这个颜色 */
 html {
   background-color: var(--bg-home) !important;
 }
@@ -18,19 +21,17 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-home) !important;
-  /* 解决某些移动端/浏览器滚动条占据宽度导致的闪烁 */
+  color: var(--color-text-main);
   overflow-x: hidden; 
   height: 100%;
   width: 100%;
-  
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  /* 优化全站字体渲染 */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 2. 核心：锁定 #root 和其内部的首层容器 */
+/* --- 3. 核心容器：锁定 #root --- */
 #root {
   background-color: var(--bg-home) !important;
   min-height: 100vh;
@@ -39,12 +40,21 @@ body {
   flex-direction: column;
 }
 
-/* 3. 额外预防方案：防止 Framer Motion 动画期间的透明度泄露 */
-.framer-motion-layout-wrapper {
-  background-color: var(--bg-home);
+/* --- 4. 全局动态噪点层 (The Magic Layer) --- */
+/* 透明度设为 0.035 (3.5%)，既有质感又不会弄脏屏幕 */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999; /* 确保在最顶层 */
+  pointer-events: none; /* 确保不影响点击交互 */
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* 强制让 Canvas 或其他可能产生背景的元素透明 */
-canvas {
-  display: block;
+/* 兼容你原本的预防方案 */
+.framer-motion-layout-wrapper {
+  background-color: var(--bg-home) !important;
 }

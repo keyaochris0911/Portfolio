@@ -128,6 +128,7 @@ export default function Work() {
       
       {/* 1. 墙纸渐变衔接层：独立出来，始终渲染 */}
       <div className="absolute inset-0 z-0 bg-[#F1F5F9]" />
+      
       <motion.div 
         className="absolute inset-0 z-[1]"
         initial={{ opacity: 0 }}
@@ -168,7 +169,15 @@ export default function Work() {
           {/* Menu Bar */}
           <div className="w-full h-7 bg-white/20 backdrop-blur-xl flex items-center justify-between px-4 border-b border-white/10">
             <div className="flex space-x-8 items-center">
-              <span className="text-[11px] font-bold text-slate-800 tracking-tighter italic"> Keyao Zhu</span>
+              <Link 
+  to="/" 
+  className="flex items-center gap-1.5 hover:bg-black/5 px-2 py-0.5 rounded transition-all group"
+>
+  <span className="text-slate-800 text-[14px]"></span>
+  <span className="text-slate-800 text-[11px] font-bold tracking-tighter italic group-hover:text-blue-600">
+    Keyao Zhu
+  </span>
+</Link>
               <span className="text-[10px] text-slate-700/80 font-medium cursor-default">File</span>
               <span className="text-[10px] text-slate-700/80 font-medium cursor-default">View</span>
             </div>

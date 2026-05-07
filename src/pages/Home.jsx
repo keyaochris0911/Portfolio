@@ -63,18 +63,25 @@ export default function Home() {
         backgroundSize: '100% 100%'
       }}
     >
+      <div 
+      className="absolute inset-0 pointer-events-none z-[5]" 
+      style={{ 
+        background: 'conic-gradient(from 180deg at 50% 60%, rgba(255,182,193,0.04), rgba(173,216,230,0.06), rgba(144,238,144,0.04), rgba(255,255,153,0.05), rgba(255,182,193,0.04))', 
+        mixBlendMode: 'screen' 
+      }} 
+    />
       {/* 顶部导航 */}
-      <nav className="absolute top-10 flex space-x-28 z-[150]">
-        {navItems.map((i) => (
-          <Link 
-            key={i.path} 
-            to={i.path} 
-            className="text-[15px] tracking-[0.2em] text-[#8A9BB0] hover:text-[#496b8d] transition-colors duration-300 font-light"
-          >
-            {i.label}
-          </Link>
-        ))}
-      </nav>
+      <nav className="absolute top-10 flex space-x-40 z-[150]">
+  {navItems.map((i) => (
+    <Link 
+      key={i.path} 
+      to={i.path} 
+      className="text-[13px] tracking-[0.4em] text-[#8A9BB0] hover:text-[#496b8d] transition-colors duration-300 font-semibold uppercase"
+    >
+      {i.label}
+    </Link>
+  ))}
+</nav>
 
       {/* 场景层 */}
       <div className="relative w-full max-w-[800px] aspect-[4/3] flex items-center justify-center mt-10">
@@ -109,9 +116,16 @@ export default function Home() {
                 style={{ rotate: `${hoveredItem.rotation}deg` }}
                 className={`absolute ${hoveredItem.labelOffset} -translate-x-1/2`}
               >
-                <span className="block bg-white/95 px-5 py-2 rounded-sm text-sm tracking-[0.2em] font-medium text-[#6B8CAE] shadow-2xl border border-[#E2E8F0] whitespace-nowrap">
-                  {hoveredItem.label}
-                </span>
+                <span 
+  className="block px-5 py-2 rounded-sm text-[14px] tracking-[0.25em] font-bold text-[#6B8CAE] whitespace-nowrap uppercase"
+  style={{
+    background: 'rgba(255,255,255,0.95)',
+    boxShadow: '0 4px 20px rgba(107,140,174,0.15), inset 0 0 0 1px rgba(107,140,174,0.1)',
+    borderImage: 'linear-gradient(135deg, rgba(255,182,193,0.4), rgba(173,216,230,0.4), rgba(255,255,153,0.3)) 1',
+  }}
+>
+  {hoveredItem.label}
+</span>
               </motion.div>
             )}
           </AnimatePresence>

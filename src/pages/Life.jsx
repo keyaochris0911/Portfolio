@@ -181,9 +181,18 @@ export default function LifePage() {
         </motion.div>
       ))}
 
-      <div className="absolute top-10 left-10 z-[110]">
-        <Link to="/" className="text-[10px] tracking-[0.3em] text-white font-bold opacity-70 hover:opacity-100 uppercase">← BACK</Link>
-      </div>
+      <div className="absolute top-12 left-12 z-[200]">
+  <Link to="/" className="flex items-center gap-2 group">
+    {/* 1. 箭头：保持 14px 纤细感 */}
+    <span className="text-[14px] text-white/80 group-hover:-translate-x-1 transition-transform duration-300">
+      ←
+    </span>
+    {/* 2. 文字：对齐 Edu 和 Work 的 Sans 字体、11px 字号、0.3em 字间距 */}
+    <span className="text-[11px] tracking-[0.3em] font-sans text-white/80 group-hover:text-white transition-colors duration-300 uppercase">
+      Back
+    </span>
+  </Link>
+</div>
     </div>
   );
 }

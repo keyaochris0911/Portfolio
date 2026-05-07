@@ -116,40 +116,65 @@ export default function Edu() {
         }}
       />
 
-      {/* 3. 年轮纹理层 (z-20) - 0.6s 同步浮现 */}
-      <motion.div 
-        className="absolute inset-0 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-        style={{ 
-  backgroundImage: `
-    repeating-radial-gradient(
-      circle at 15% 15%, 
-      rgba(101, 86, 75, 0.05) 0px, 
-      rgba(101, 86, 75, 0.02) 1px,   /* 增加这 10px 的缓冲带 */
-      transparent 200px               /* 这里的距离决定了“年轮”的疏密 */
-    )
-  `,
-  mixBlendMode: 'multiply'
-}}
-      />
+{/* --- 替换 3. 年轮纹理层 (z-20) --- */}
+<motion.div 
+  className="absolute inset-0 z-20 pointer-events-none"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1.5 }}
+  style={{ 
+    backgroundImage: `
+      repeating-radial-gradient(
+        circle at 8% 8%, 
+        rgba(101, 86, 75, 0.025) 0px, 
+        rgba(101, 86, 75, 0.025) 1.5px, 
+        transparent 1.5px, 
+        transparent 90px
+      ),
+      repeating-radial-gradient(
+        circle at 92% 92%, 
+        rgba(101, 86, 75, 0.02) 0px, 
+        rgba(101, 86, 75, 0.02) 1.5px, 
+        transparent 1.5px, 
+        transparent 280px
+      )
+    `,
+    mixBlendMode: 'multiply',
+    filter: 'blur(0.5px)' 
+  }}
+/>
 
       {/* 内容层 (z-30) */}
       <div className="relative z-30 w-full h-full flex flex-col font-body">
-        <div className="w-full px-10 py-8">
-          <Link to="/" className="text-[10px] font-header tracking-[0.2em] text-slate-500/80 hover:text-slate-900 transition-all">
-            ← BACK TO HOME
-          </Link>
+        <div className="w-full px-14 py-10 flex justify-between items-center">
+  <Link 
+  to="/" 
+  className="fixed top-12 left-12 z-[200] flex items-center gap-2 group"
+>
+  {/* 箭头保持轻盈 */}
+  <span className="text-[14px] text-slate-400 group-hover:-translate-x-1 transition-transform duration-300">
+    ←
+  </span>
+  {/* 字体同步：使用 Montserrat 或系统 Sans，字号调至 11px 以平衡衬线感 */}
+  <span className="text-[11px] tracking-[0.3em] font-sans text-slate-400 group-hover:text-slate-800 transition-colors duration-300 uppercase">
+    Back
+  </span>
+</Link>
         </div>
 
         <div className="flex-1 flex px-20 pb-20 items-center justify-center">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={!isLoading ? { opacity: 1, y: 0 } : { opacity: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full max-w-6xl h-[680px] grid grid-cols-[360px_1fr] relative rounded-[18px] overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.3)]"
-          >
+  initial={{ opacity: 0, y: 20 }}
+  animate={!isLoading ? { opacity: 1, y: 0 } : { opacity: 0 }}
+  transition={{ duration: 1, ease: "easeOut" }}
+  className="w-full max-w-6xl h-[680px] grid grid-cols-[360px_1fr] relative rounded-[18px] overflow-hidden"
+  style={{
+    // 1. 注入纤维噪点纹理
+    backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,
+    // 2. 增强大阴影，让笔记本“浮”在背景上
+    boxShadow: '0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3)'
+  }}
+>
             {/* 左页 */}
             <div className="relative bg-[#FCFBF9] py-20 px-12 z-10" style={{ backgroundImage: 'repeating-linear-gradient(transparent, transparent 27px, rgba(101, 86, 75, 0.08) 28px)', backgroundSize: '100% 28px' }}>
               {eduData.map((item, index) => (
