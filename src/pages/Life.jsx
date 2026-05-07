@@ -21,7 +21,7 @@ const cities = [
   { id: 2, name: "but not", x: 29, y: 22, type: 'video', src: "/visuals/Day2.MOV", text: "100公里的徒步\n 让我终于慢下来 思考想要什么" },
   { id: 3, name: "stopping", x: 45, y: 32, type: 'video', src: "/visuals/Day3.MOV", text: "要在正确的方向上前行\n才会遇上志同道合的同行人" },
   { id: 4, name: "I am", x: 37, y: 55, type: 'video', src: "/visuals/Day45.mp4", text: "坚持按自己的节奏行走\n就总会到达目的地", position: 'left' },
-  { id: 5, name: "walking", x: 55, y: 68, type: 'images', images: ["/visuals/newsletter.png", "/visuals/Job.jpg"], text: "回国之后Vibe coding了作品集\n搭了些AI自动化工作流" , position: 'left'},
+  { id: 5, name: "walking", x: 55, y: 68, type: 'images', images: ["/visuals/newsletter.webp", "/visuals/Job.webp"], text: "回国之后Vibe coding了作品集\n搭了些AI自动化工作流" , position: 'left'},
   { id: 6, name: "while", x: 72, y: 55, type: 'video', src: "/visuals/cookie.MOV", text: "手搓了一个抽选每日运势的\n幸运饼干小游戏", position: 'top' },
   { id: 7, name: "learning", x: 82, y: 75, type: 'video', src: "/visuals/gift.mp4", text: "以及一个为朋友设计的\n生日礼物决赛圈小游戏", position: 'top' },
 ];
@@ -119,7 +119,7 @@ export default function LifePage() {
 
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden bg-[#A5C28F]">
-      <div className="absolute inset-0 z-0 bg-[url('/visuals/grass_bg.jpg')] bg-cover bg-center" />
+      <div className="absolute inset-0 z-0 bg-[url('/visuals/grass_bg.webp')] bg-cover bg-center" />
       
       {/* 1. 点击空白关闭遮罩层 */}
       <AnimatePresence>
@@ -142,7 +142,7 @@ export default function LifePage() {
           <rect x="0" y="0" width="100" height="100" fill="white" />
           <motion.path d={fullPath} fill="none" stroke="black" strokeWidth="6" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1, duration: 12, ease: "linear" }} />
         </mask>
-        <image href="/visuals/cloud_bg.jpg" x="0" y="0" width="100" height="100" mask="url(#pathMask)" preserveAspectRatio="none" />
+        <image href="/visuals/cloud_bg.webp" x="0" y="0" width="100" height="100" mask="url(#pathMask)" preserveAspectRatio="none" />
       </svg>
 
       {/* 弹出小窗 */}

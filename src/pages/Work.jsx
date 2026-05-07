@@ -67,7 +67,7 @@ export default function Work() {
       role: '视觉牵头人',
       duration: '2025.12 - 2026.08',
       oneLiner: '2025淘宝丑东西大赛',
-      videoSrc: '/visuals/04-7.MP4',
+      videoSrc: '/visuals/04-7.webm',
       highlights: [
         '从Z世代消费者对「个性美学」的重新定义出发，重新设计淘宝丑东西大赛的传播设计逻辑',
         '创新性提出‘丑术馆’运营创意并负责线下落地，实现线上声量与线下场景双线联动',
@@ -85,7 +85,7 @@ export default function Work() {
       role: '项目负责人',
       duration: '2020 - 2023',
       oneLiner: '三星堆IP运营',
-      videoSrc: '/visuals/2021_news_award.mp4',
+      videoSrc: '/visuals/2021_news_award.webm',
       highlights: [
         '打造了“专题报道+微纪录片+文物推介短视频+动画MV+文博机构新媒体联动+文创衍生（表情包、NFT数字藏品、实体文创）+KOL共创+UGC挑战”的立体内容矩阵',
         '将考古事件转化为可持续运营的文化IP',
@@ -233,7 +233,7 @@ export default function Work() {
                       <div className="relative z-10 mb-24 group">
                         <div className="relative w-[108%] -ml-[4%] aspect-[16/7] bg-slate-950 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10">
                           <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-80">
-                            <source src="/visuals/2021_news_award.mp4" type="video/mp4" />
+                            <source src="/visuals/2021_news_award.webm" type="video/webm" />
                           </video>
                           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-black/20" />
                           <div className="absolute top-5 right-10 flex flex-col items-end text-white">
@@ -264,7 +264,7 @@ export default function Work() {
                           <div className="flex-1">
                             <div className="relative w-full aspect-video bg-slate-950 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                               <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                                <source src="/visuals/2023_energy_award.mp4" type="video/mp4" />
+                                <source src="/visuals/2023_energy_award.webm" type="video/webm" />
                               </video>
                             </div>
                           </div>
@@ -289,18 +289,18 @@ export default function Work() {
                         </div>
                         <div className="flex gap-6 overflow-x-auto no-scrollbar pb-10 -mx-4 px-12 snap-x snap-mandatory">
                           {[
-                            { type: 'image', src: '/visuals/03-1.png' },
-                            { type: 'image', src: '/visuals/03-2.png' },
-                            { type: 'image', src: '/visuals/03-3.png' },
-                            { type: 'video', src: '/visuals/03-4.mp4' },
-                            { type: 'image', src: '/visuals/03-5.png' },
-                            { type: 'image', src: '/visuals/03-6.jpg' },
+                            { type: 'image', src: '/visuals/03-1.webp' },
+                            { type: 'image', src: '/visuals/03-2.webp' },
+                            { type: 'image', src: '/visuals/03-3.webp' },
+                            { type: 'video', src: '/visuals/03-4.webm' },
+                            { type: 'image', src: '/visuals/03-5.webp' },
+                            { type: 'image', src: '/visuals/03-6.webp' },
                           ].map((item, index) => (
                             <div key={index} className="flex-none w-[80vw] md:w-[70%] snap-start relative">
                               <div className="relative aspect-[16/10] bg-slate-100 rounded-3xl overflow-hidden border border-slate-200/50 shadow-sm">
                                 {item.type === 'video' ? (
                                   <video autoPlay loop muted playsInline className="w-full h-full object-cover">
-                                    <source src={item.src} type="video/mp4" />
+                                    <source src={item.src} type="video/webm" />
                                   </video>
                                 ) : (
                                   <img src={item.src} alt="" className="w-full h-full object-cover" />
@@ -331,25 +331,25 @@ export default function Work() {
                           <div className="flex-1">
                             <div className="columns-2 gap-3 space-y-3 h-[500px] overflow-y-auto pr-2 custom-scrollbar-thin">
                               {[
-                                { type: 'video', src: '/visuals/04-4.mp4' },
-                                { type: 'image', src: '/visuals/04-1.png' },
-                                { type: 'image', src: '/visuals/04-2.jpeg' },
-                                { type: 'image', src: '/visuals/04-3.jpeg' },
-                                { type: 'video', src: '/visuals/04-7.MP4' },
-                                { type: 'image', src: '/visuals/04-6.jpeg' },
-                                { type: 'image', src: '/visuals/04-5.jpeg' },
-                                { type: 'image', src: '/visuals/04-8.png' },
-                                { type: 'image', src: '/visuals/04-16.png' },
-                                { type: 'video', src: '/visuals/04-9.mp4' },
-                                { type: 'image', src: '/visuals/04-11.png' },
-                                { type: 'image', src: '/visuals/04-12.png' },
-                                { type: 'image', src: '/visuals/04-14.png' },
-                                { type: 'image', src: '/visuals/04-10.png' },
+                                { type: 'video', src: '/visuals/04-4.webm' },
+                                { type: 'image', src: '/visuals/04-1.webp' },
+                                { type: 'image', src: '/visuals/04-2.webp' },
+                                { type: 'image', src: '/visuals/04-3.webp' },
+                                { type: 'video', src: '/visuals/04-7.webm' },
+                                { type: 'image', src: '/visuals/04-6.webp' },
+                                { type: 'image', src: '/visuals/04-5.webp' },
+                                { type: 'image', src: '/visuals/04-8.webp' },
+                                { type: 'image', src: '/visuals/04-16.webp' },
+                                { type: 'video', src: '/visuals/04-9.webm' },
+                                { type: 'image', src: '/visuals/04-11.webp' },
+                                { type: 'image', src: '/visuals/04-12.webp' },
+                                { type: 'image', src: '/visuals/04-14.webp' },
+                                { type: 'image', src: '/visuals/04-10.webp' },
                               ].map((item, idx) => (
                                 <motion.div key={idx} whileHover={{ y: -4 }} className="relative break-inside-avoid rounded-xl overflow-hidden border border-slate-200 shadow-sm bg-white">
                                   {item.type === 'video' ? (
                                     <video autoPlay loop muted playsInline className="w-full object-cover">
-                                      <source src={item.src} type="video/mp4" />
+                                      <source src={item.src} type="video/webm" />
                                     </video>
                                   ) : (
                                     <img src={item.src} alt="" className="w-full h-auto object-cover" />
@@ -380,7 +380,7 @@ export default function Work() {
 
                       <div className="relative w-full aspect-video bg-slate-950 rounded-xl overflow-hidden shadow-lg border border-slate-200">
                         <video key={win.id} autoPlay loop muted playsInline className="w-full h-full object-cover">
-                          <source src={win.videoSrc} type="video/mp4" />
+                          <source src={win.videoSrc} type="video/webm" />
                         </video>
                         <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl pointer-events-none" />
                       </div>

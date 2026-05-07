@@ -7,6 +7,38 @@ import Edu from './pages/Edu';
 import Life from './pages/Life';
 import About from './pages/About';
 
+
+const preloadMedia = () => {
+  const mediaUrls = [
+    "/visuals/Day1.webm", 
+    "/visuals/Day2.webm",
+    "/visuals/Day3.webm",
+    "/visuals/Day45.webm",
+    "/visuals/cookie.webm",
+    "/visuals/gift.webm",
+    "/visuals/cloud_bg.webp",
+    "/visuals/grass_bg.webp",
+    "/visuals/04-7.webm",
+    "visuals/2021_news_award.webp",
+  ];
+  mediaUrls.forEach(url => {
+    if (url.endsWith('.mp4')) {
+      const video = document.createElement('video');
+      video.src = url;
+      video.preload = 'auto'; // 强制浏览器开始下载
+    } else {
+      const img = new Image();
+      img.src = url;
+    }
+  });
+};
+
+// 在 App 组件加载后执行一次
+useEffect(() => {
+  preloadMedia();
+}, []);
+
+
 // 1. 悬浮联系组件（保持你原来的逻辑）
 const FloatContact = () => {
   return (
