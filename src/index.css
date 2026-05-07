@@ -1,12 +1,12 @@
+/* --- 1. 外部资源导入 (必须放在文件最顶端) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,900;1,900&family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&display=swap');
+
+/* --- 2. Tailwind 核心指令 --- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* --- 1. 字体系统扩容 --- */
-/* 保留你原本需要的字体，并加入 Playfair Display */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,900;1,900&family=Noto+Serif+SC:wght@400;700&family=Ma+Shan+Zheng&display=swap');
-
-/* --- 2. 全局变量与背景锁定 --- */
+/* --- 3. 全局变量与背景锁定 --- */
 :root {
   --bg-home: #F1F5F9;
   --color-text-main: #2C3E50;    
@@ -31,7 +31,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- 3. 核心容器：锁定 #root --- */
+/* --- 4. 核心容器：锁定 #root --- */
 #root {
   background-color: var(--bg-home) !important;
   min-height: 100vh;
@@ -40,16 +40,15 @@ body {
   flex-direction: column;
 }
 
-/* --- 4. 全局动态噪点层 (The Magic Layer) --- */
-/* 透明度设为 0.035 (3.5%)，既有质感又不会弄脏屏幕 */
+/* --- 5. 全局动态噪点层 (The Magic Layer) --- */
 .noise-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 9999; /* 确保在最顶层 */
-  pointer-events: none; /* 确保不影响点击交互 */
+  z-index: 9999; 
+  pointer-events: none; 
   opacity: 0.035;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
