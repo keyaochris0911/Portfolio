@@ -17,13 +17,13 @@ const getSmoothPath = (points) => {
 };
 
 const cities = [
-  { id: 1, name: "Gap-ing", x: 8, y: 30, type: 'video', src: "/visuals/Day1.MOV", text: "GAP期间 我去西班牙\n走了朝圣之路" },
-  { id: 2, name: "but not", x: 29, y: 22, type: 'video', src: "/visuals/Day2.MOV", text: "100公里的徒步\n 让我终于慢下来 思考想要什么" },
-  { id: 3, name: "stopping", x: 45, y: 32, type: 'video', src: "/visuals/Day3.MOV", text: "要在正确的方向上前行\n才会遇上志同道合的同行人" },
-  { id: 4, name: "I am", x: 37, y: 55, type: 'video', src: "/visuals/Day45.mp4", text: "坚持按自己的节奏行走\n就总会到达目的地", position: 'left' },
+  { id: 1, name: "Gap-ing", x: 8, y: 30, type: 'video', src: "/visuals/Day1.webm", text: "GAP期间 我去西班牙\n走了朝圣之路" },
+  { id: 2, name: "but not", x: 29, y: 22, type: 'video', src: "/visuals/Day2.webm", text: "100公里的徒步\n 让我终于慢下来 思考想要什么" },
+  { id: 3, name: "stopping", x: 45, y: 32, type: 'video', src: "/visuals/Day3.webm", text: "要在正确的方向上前行\n才会遇上志同道合的同行人" },
+  { id: 4, name: "I am", x: 37, y: 55, type: 'video', src: "/visuals/Day45.webm", text: "坚持按自己的节奏行走\n就总会到达目的地", position: 'left' },
   { id: 5, name: "walking", x: 55, y: 68, type: 'images', images: ["/visuals/newsletter.webp", "/visuals/Job.webp"], text: "回国之后Vibe coding了作品集\n搭了些AI自动化工作流" , position: 'left'},
-  { id: 6, name: "while", x: 72, y: 55, type: 'video', src: "/visuals/cookie.MOV", text: "手搓了一个抽选每日运势的\n幸运饼干小游戏", position: 'top' },
-  { id: 7, name: "learning", x: 82, y: 75, type: 'video', src: "/visuals/gift.mp4", text: "以及一个为朋友设计的\n生日礼物决赛圈小游戏", position: 'top' },
+  { id: 6, name: "while", x: 72, y: 55, type: 'video', src: "/visuals/cookie.webm", text: "手搓了一个抽选每日运势的\n幸运饼干小游戏", position: 'top' },
+  { id: 7, name: "learning", x: 82, y: 75, type: 'video', src: "/visuals/gift.webm", text: "以及一个为朋友设计的\n生日礼物决赛圈小游戏", position: 'top' },
 ];
 
 const MagneticMarker = ({ city, onToggle, isActive }) => {
